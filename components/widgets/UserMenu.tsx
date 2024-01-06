@@ -30,7 +30,7 @@ export default function UserMenu() {
             alt="profile picture of user"
             size="md"
             variant="rounded"
-            className="rounded-full shadow-sm shadow-blue-gray-500/40"
+            className="rounded-full shadow-sm shadow-blue-gray-500/40 cursor-pointer"
           />
         </MenuHandler>
 
