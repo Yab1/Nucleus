@@ -48,19 +48,24 @@ export default function Notifications() {
           itemPress: false,
         }}
       >
-        <Badge content="5" color="blue" withBorder>
-          <MenuHandler>
-            <IconButton
-              placeholder={undefined}
-              variant="text"
-              className="rounded-full !p-0"
+        <MenuHandler>
+          <IconButton
+            placeholder={undefined}
+            variant="text"
+            className="rounded-full"
+          >
+            <Badge
+              content="5"
+              color="blue"
+              // className="!right-[20%] !top-[20%] !py-0 !px-0"
+              withBorder
             >
               <FaBell size={20} />
-            </IconButton>
-          </MenuHandler>
-        </Badge>
+            </Badge>
+          </IconButton>
+        </MenuHandler>
         <MenuList placeholder={undefined} className="w-96">
-          <Tabs value={activeTab}>
+          <Tabs value={activeTab} className="border-none">
             <TabsHeader
               placeholder={undefined}
               className="rounded-none border-b border-blue-gray-50 bg-transparent p-0"
