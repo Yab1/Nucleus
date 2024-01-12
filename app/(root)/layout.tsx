@@ -4,7 +4,7 @@ import { Poppins } from "next/font/google";
 import "../globals.css";
 import { Sidebar, Topbar } from "@/components/layouts";
 
-const inter = Poppins({ weight: ["400"], subsets: ["latin"] });
+const poppins = Poppins({ weight: ["400"], subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Nucleus",
@@ -15,12 +15,12 @@ export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en">
       <body
-        className={`${inter.className} bg-white dark:bg-grayish-black h-screen flex`}
+        className={`${poppins.className} bg-white dark:bg-grayish-black h-screen flex`}
       >
         <Sidebar />
         <div className="flex flex-col flex-1">
           <Topbar />
-          <main className="flex-1 overflow-y-auto bg-misty-sky px-10 py-16">
+          <main className="flex-1 overflow-y-auto bg-off-white p-10">
             {children}
           </main>
         </div>
