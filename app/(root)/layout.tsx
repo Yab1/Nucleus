@@ -20,7 +20,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         <Sidebar />
         <div className="flex flex-col flex-1">
           <Topbar />
-          <main className="flex-1 overflow-y-auto bg-off-white p-10">
+          <main className="flex-1 overflow-y-auto bg-off-white p-5">
             {children}
           </main>
         </div>
