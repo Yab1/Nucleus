@@ -10,7 +10,6 @@ import {
   Typography,
 } from "@material-tailwind/react";
 import { HiLogout } from "react-icons/hi";
-import { secondaryRoutes, tertiaryRoutes } from "@/routes";
 
 export default function UserMenu() {
   return (
@@ -35,7 +34,7 @@ export default function UserMenu() {
         </MenuHandler>
 
         <MenuList placeholder={undefined}>
-          {tertiaryRoutes.map(({ name, path, icon }) => {
+          {/* {tertiaryRoutes.map(({ name, path, icon }) => {
             const IconComponent = icon;
             return (
               <MenuItem placeholder={undefined} key={name}>
@@ -55,7 +54,7 @@ export default function UserMenu() {
                 </Link>
               </MenuItem>
             );
-          })}
+          })} */}
           <hr className="my-2 border-blue-gray-50" />
           <MenuItem
             placeholder={undefined}
