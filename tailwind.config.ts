@@ -21,15 +21,14 @@ module.exports = withMT({
       },
       textColor: {
         light: {
-          primary: "",
+          primary: "#060023",
           secondary: "#4d4764",
+          tertiary: "#6e6c73",
         },
         dark: {
           primary: "#bdbdbd",
           secondary: "#d2d2d2",
           tertiary: "#acacac",
-          // tertiary: "#cccccc",
-          // fourth: "#a1a1a1",
         },
       },
       borderColor: {
@@ -43,17 +42,18 @@ module.exports = withMT({
         },
       },
       colors: {
-        "border-light-primary": "#e1e3e4", // primary light border
-        "light-primary": "#f5f4f4",
-        "black-pearl": "#1c1c1c",
-        charcoal: "#232323",
-        gunmetal: "#383838",
+        "electric-purple": "#552cf9",
+        // "border-light-primary": "#e1e3e4", // primary light border
+        // "light-primary": "#f5f4f4",
+        // "black-pearl": "#1c1c1c",
+        // charcoal: "#232323",
+        // gunmetal: "#383838",
 
-        "grayish-black": "#1b1c1e",
-        "misty-sky": "#f6f7ff",
-        "gray-light": "#a5a5a5",
-        silver: "#e5e5e5",
-        "steel-gray": "#757575",
+        // "grayish-black": "#1b1c1e",
+        // "misty-sky": "#f6f7ff",
+        // "gray-light": "#a5a5a5",
+        // silver: "#e5e5e5",
+        // "steel-gray": "#757575",
       },
     },
   },
