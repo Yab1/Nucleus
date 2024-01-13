@@ -19,8 +19,11 @@ import {
   Themes,
   Workspace,
 } from "../settingSections";
+import { useSelector } from "react-redux";
+import { RootState } from "@/redux/store";
 
 export default function Settings() {
+  const darkMode = useSelector((state: RootState) => state.ui.darkMode);
   const [open, setOpen] = useState<boolean>(false);
 
   const handleOpen = () => {
@@ -32,10 +35,10 @@ export default function Settings() {
       <IconButton
         placeholder={undefined}
         color="white"
-        className="rounded-lg border border-grayish-blue w-9 h-9"
+        className="rounded-lg border border-light-primary w-9 h-9 dark:border-dark-primary dark:bg-dark-tertiary dark:shadow-gray-900 dark:hover:shadow-gray-900"
         onClick={handleOpen}
       >
-        <IoSettingsOutline size={19} color="black" />
+        <IoSettingsOutline size={19} color={darkMode ? "#eaeaea" : "black"} />
       </IconButton>
 
       <Dialog
@@ -47,11 +50,14 @@ export default function Settings() {
       >
         <DialogHeader
           placeholder={undefined}
-          className="flex p-0 border-b border-e-grayish-blue justify-between"
+          className="flex p-0 border-b border-e-border-light-primary justify-between"
         >
-          <div className="h-20 flex place-items-center px-3 gap-3 border-r rounded-ss-lg border-grayish-blue w-1/5 bg-off-white">
-            <span className="rounded-lg border border-grayish-blue w-8 h-8 grid place-content-center">
-              <IoSettingsOutline size={19} color="black" />
+          <div className="h-20 flex place-items-center px-3 gap-3 border-r rounded-ss-lg border-light-primary w-1/5 bg-light-primary">
+            <span className="rounded-lg border border-light-primary w-8 h-8 grid place-content-center">
+              <IoSettingsOutline
+                size={19}
+                color={darkMode ? "#eaeaea" : "black"}
+              />
             </span>
             <Typography placeholder={undefined} variant="h5" color="black">
               Setting
@@ -61,14 +67,14 @@ export default function Settings() {
           <IconButton
             placeholder={undefined}
             color="white"
-            className="rounded-lg shadow-none bg-off-white w-9 h-9 self-start"
+            className="rounded-lg shadow-none bg-light-primary w-9 h-9 self-start"
             onClick={handleOpen}
           >
             <GrClose size={19} color="black" />
           </IconButton>
         </DialogHeader>
         <DialogBody placeholder={undefined} className="p-0 flex h-full">
-          <aside className="w-1/5 border-r border-grayish-blue h-full bg-off-white rounded-s-lg">
+          <aside className="w-1/5 border-r border-light-primary h-full bg-light-primary rounded-s-lg">
             <nav className="flex flex-col ml-6 gap-5 mt-7">
               {settingRoutes.map(({ title, routes }) => (
                 <div key={title}>
