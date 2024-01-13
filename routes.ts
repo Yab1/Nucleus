@@ -1,17 +1,12 @@
-import { LayoutArray, RouteArray } from "@/typing";
-import { FaRegClock, FaUserCircle } from "react-icons/fa";
-import { TiFlashOutline } from "react-icons/ti";
+import { LayoutArray } from "@/typing";
+import { FaRegClock } from "react-icons/fa";
 import { LuCalendar } from "react-icons/lu";
 import { SlPeople } from "react-icons/sl";
 import { GoProject } from "react-icons/go";
-import { CiGrid41 } from "react-icons/ci";
-import { RiInbox2Fill } from "react-icons/ri";
-import { AiFillSetting } from "react-icons/ai";
-import { BiSolidHelpCircle } from "react-icons/bi";
-import { MdOutlineSecurity, MdAttachMoney } from "react-icons/md";
-import { BsWallet2 } from "react-icons/bs";
-import { CgProfile } from "react-icons/cg";
+import { CiGrid41, CiUser } from "react-icons/ci";
+import { RiInbox2Fill, RiSettingsLine } from "react-icons/ri";
 import { VscSymbolColor, VscGraph } from "react-icons/vsc";
+import { IoShareSocialOutline } from "react-icons/io5";
 
 export const primaryRoutes: LayoutArray = [
   {
@@ -65,70 +60,46 @@ export const primaryRoutes: LayoutArray = [
     ],
   },
 ];
-// { name: "Activities", path: "/activities", icon: TiFlashOutline },
-// export const primaryRoutes: RouteArray = [
-//   {
-//     name: "Tasks",
-//     path: "/tasks",
-//     icon: FaRegClock,
-//   },
-//   { name: "Activities", path: "/activities", icon: TiFlashOutline },
-// ];
 
-// export const secondaryRoutes: RouteArray = [
-//   { name: "Dashboard", path: "/", icon: CiGrid41 },
-//   { name: "Projects", path: "/projects", icon: GoProject },
-//   { name: "Teams", path: "/teams", icon: SlPeople },
-//   { name: "Calendar", path: "/calendar", icon: LuCalendar },
-// ];
-
-// export const tertiaryRoutes: RouteArray = [
-//   {
-//     name: "my profile",
-//     path: "/profile",
-//     icon: FaUserCircle,
-//   },
-//   {
-//     name: "inbox",
-//     path: "/inbox",
-//     icon: RiInbox2Fill,
-//   },
-//   {
-//     name: "settings",
-//     path: "/settings",
-//     icon: AiFillSetting,
-//   },
-//   {
-//     name: "help",
-//     path: "/help",
-//     icon: BiSolidHelpCircle,
-//   },
-// ];
-
-// export const settingRoutes: RouteArray = [
-//   {
-//     name: "Personal Details",
-//     path: "/settings/profile",
-//     icon: CgProfile,
-//   },
-//   {
-//     name: "Security",
-//     path: "/settings/security",
-//     icon: MdOutlineSecurity,
-//   },
-//   {
-//     name: "Plans & Pricing",
-//     path: "/settings/plans & pricing",
-//     icon: BsWallet2,
-//   },
-//   {
-//     name: "Payment & Billing",
-//     path: "/settings/plans & pricing",
-//     icon: MdAttachMoney,
-//   },
-//   {
-//     name: "Themes",
-//     path: "/settings/themes",
-//     icon: VscSymbolColor,
-//   },
-// ];
+export const settingRoutes: LayoutArray = [
+  {
+    title: "General",
+    routes: [
+      {
+        routeTitle: "Edit Profile",
+        routePath: "#edit-profile",
+        routeIcon: CiUser,
+      },
+      {
+        routeTitle: "Themes",
+        routePath: "#themes",
+        routeIcon: VscSymbolColor,
+      },
+    ],
+  },
+  {
+    title: "Notification",
+    routes: [
+      {
+        routeTitle: "Personal",
+        routePath: "#personal",
+        routeIcon: RiSettingsLine,
+      },
+      {
+        routeTitle: "Workspace",
+        routePath: "#workspace",
+        routeIcon: CiUser,
+      },
+    ],
+  },
+  {
+    title: "Apps",
+    routes: [
+      {
+        routeTitle: "Social Media",
+        routePath: "#socials",
+        routeIcon: IoShareSocialOutline,
+      },
+    ],
+  },
+];
