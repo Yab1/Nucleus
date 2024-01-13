@@ -1,12 +1,13 @@
 "use client";
 
 import { Button, Card, CardBody, Typography } from "@material-tailwind/react";
-import { useEffect, useState } from "react";
 import Image from "next/image";
 import { ThemeArray } from "@/typing/ThemeArray";
+import { useDispatch } from "react-redux";
+import { toggleDarkMode } from "@/redux/slices";
 
 export default function Themes() {
-  const [darkMode, setDarkMode] = useState<boolean>(false);
+  const dispatch = useDispatch();
 
   const themes: ThemeArray = [
     {
@@ -22,14 +23,6 @@ export default function Themes() {
       value: window.matchMedia("(prefers-color-scheme: dark)").matches,
     },
   ];
-
-  useEffect(() => {
-    const html = document.querySelector("html") as HTMLHtmlElement;
-
-    darkMode
-      ? html.setAttribute("class", "dark")
-      : html.removeAttribute("class");
-  }, [darkMode]);
 
   return (
     <section id="themes">
@@ -50,7 +43,7 @@ export default function Themes() {
           <Button
             placeholder={undefined}
             className="p-0 bg-transparent rounded-2xl border border-grayish-blue shadow-sm"
-            onClick={() => setDarkMode(value)}
+            onClick={() => dispatch(toggleDarkMode(value))}
           >
             <Card placeholder={undefined}>
               <CardBody placeholder={undefined} className="p-0 text-black">

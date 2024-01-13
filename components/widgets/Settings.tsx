@@ -85,9 +85,8 @@ export default function Settings() {
                     const IconComponent = routeIcon;
 
                     return (
-                      <div className="pl-3 flex flex-col my-5">
+                      <div key={routeTitle} className="pl-3 flex flex-col my-5">
                         <Link
-                          key={routeTitle}
                           href={routePath}
                           className="flex place-items-center gap-3"
                         >
