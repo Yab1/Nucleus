@@ -19,7 +19,7 @@ export const primaryRoutes: LayoutArray = [
     routes: [
       {
         routeTitle: "Dashboard",
-        routePath: "/",
+        routePath: "/dashboard",
         routeIcon: CiGrid41,
       },
       {
