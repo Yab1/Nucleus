@@ -108,7 +108,7 @@ export default function Settings() {
             </nav>
           </aside>
 
-          <main className="flex-1 p-5">
+          <main className="flex-1 p-5 gap-10 flex flex-col overflow-y-auto">
             <EditProfile />
             <Themes />
             <Personal />
