@@ -42,12 +42,12 @@ export default function Themes() {
         {themes.map(({ title, value }) => (
           <Button
             placeholder={undefined}
-            className="p-0 bg-transparent rounded-2xl border border-grayish-blue shadow-sm"
+            className="p-0 bg-transparent rounded-2xl border border-light-primary shadow-sm"
             onClick={() => dispatch(toggleDarkMode(value))}
           >
             <Card placeholder={undefined}>
               <CardBody placeholder={undefined} className="p-0 text-black">
-                <div className="bg-grayish-blue w-full h-40 rounded-xl rounded-es-none rounded-ee-none grid place-content-center">
+                <div className="bg-border-light-primary w-full h-40 rounded-xl rounded-es-none rounded-ee-none grid place-content-center">
                   <Image
                     src={
                       value
@@ -69,7 +69,7 @@ export default function Themes() {
         ))}
       </div>
 
-      <div className="border border-grayish-blue"></div>
+      <div className="border border-light-primary"></div>
     </section>
   );
 }
