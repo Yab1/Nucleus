@@ -10,6 +10,7 @@ const uiSlice = createSlice({
   initialState,
   reducers: {
     toggleDarkMode: (state, action) => {
+      localStorage.setItem("nucleus_dark_mode", JSON.stringify(action.payload));
       state.darkMode = action.payload;
     },
   },
