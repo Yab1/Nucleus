@@ -15,7 +15,7 @@ export default function Sidebar() {
     <aside className="w-1/6 border-r border-light-primary dark:bg-dark-primary dark:border-dark-primary">
       <Link
         href="/"
-        className="flex place-items-center gap-2 text-black font-semibold text-lg border-b border-light-primary h-20 pl-5 dark:border-gunmetal dark:text-white bg-danger-"
+        className="flex place-items-center gap-2 text-light-primary font-semibold text-lg border-b border-light-primary h-20 pl-5 dark:border-dark-primary dark:text-white "
       >
         <Image src="/logo.png" width={40} height={40} alt="Nucleus Logo" />
         Nucleus
