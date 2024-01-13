@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+body {
+  @apply bg-white h-screen flex;
+}
+
 .page-title {
   @apply font-semibold text-xl;
 }
