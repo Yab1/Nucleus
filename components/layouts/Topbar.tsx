@@ -4,10 +4,12 @@ import { useEffect } from "react";
 import { Notifications, Settings, UserMenu } from "@/components/widgets";
 import { Typography } from "@material-tailwind/react";
 import { RootState } from "@/redux/store";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { toggleDarkMode } from "@/redux/slices";
 
 export default function Topbar() {
   const darkMode = useSelector((state: RootState) => state.ui.darkMode);
+  const dispatch = useDispatch();
 
   useEffect(() => {
     const html = document.querySelector("html") as HTMLHtmlElement;
@@ -16,7 +18,7 @@ export default function Topbar() {
       ? JSON.parse(storedDarkModeString)
       : null;
 
-    console.log(isDarkMode);
+    dispatch(toggleDarkMode(isDarkMode ? true : false));
 
     isDarkMode === true
       ? html.setAttribute("class", "dark")
@@ -24,12 +26,20 @@ export default function Topbar() {
   }, [darkMode]);
 
   return (
-    <header className="h-20 px-10 py-5 flex place-items-center justify-between border-b border-grayish-blue">
+    <header className="h-20 px-5 py-5 flex place-items-center justify-between border-b border-light-primary dark:bg-dark-primary dark:border-dark-primary">
       <div>
-        <Typography placeholder={undefined} variant="h5">
+        <Typography
+          placeholder={undefined}
+          variant="h5"
+          className="text-light-primary dark:text-white"
+        >
           Getting Started
         </Typography>
-        <Typography placeholder={undefined} variant="small" color="gray">
+        <Typography
+          placeholder={undefined}
+          variant="small"
+          className="text-light-tertiary dark:text-dark-tertiary"
+        >
           Take a few minutes to discover about new features!
         </Typography>
       </div>
@@ -37,7 +47,7 @@ export default function Topbar() {
       <div className="flex gap-4 place-items-center">
         <Notifications />
         <Settings />
-        <span className="h-14 w-px bg-grayish-blue"></span>
+        <span className="h-14 w-px border-r border-light-primary dark:border-dark-primary"></span>
         <UserMenu />
       </div>
     </header>
