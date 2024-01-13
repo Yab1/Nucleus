@@ -21,7 +21,7 @@ export default function Sidebar() {
         <Awsomebar />
       </div>
 
-      <div className="flex flex-col ml-6 gap-5">
+      <nav className="flex flex-col ml-6 gap-5">
         {primaryRoutes.map(({ title, routes }) => (
           <div key={title}>
             <Typography
@@ -37,9 +37,8 @@ export default function Sidebar() {
               const IconComponent = routeIcon;
 
               return (
-                <div className="pl-3 flex flex-col my-5">
+                <div key={routeTitle} className="pl-3 flex flex-col my-5">
                   <Link
-                    key={routeTitle}
                     href={routePath}
                     className="flex place-items-center gap-3"
                   >
@@ -57,7 +56,7 @@ export default function Sidebar() {
             })}
           </div>
         ))}
-      </div>
+      </nav>
     </aside>
   );
 }
