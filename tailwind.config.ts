@@ -43,6 +43,8 @@ module.exports = withMT({
       },
       colors: {
         "electric-purple": "#552cf9",
+        "light-gray": "#dddddd",
+        "charcoal-gray": "#3c3c3c",
         // "border-light-primary": "#e1e3e4", // primary light border
         // "light-primary": "#f5f4f4",
         // "black-pearl": "#1c1c1c",
