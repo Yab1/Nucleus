@@ -67,7 +67,7 @@ export const settingRoutes: LayoutArray = [
     routes: [
       {
         routeTitle: "Edit Profile",
-        routePath: "#edit-profile",
+        routePath: "#profile",
         routeIcon: CiUser,
       },
       {
