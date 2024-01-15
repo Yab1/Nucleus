@@ -1,6 +1,5 @@
 "use client";
 
-import { settingRoutes } from "@/routes";
 import {
   Dialog,
   DialogBody,
@@ -19,6 +18,7 @@ import {
   Themes,
   Workspace,
 } from "../settingSections";
+import { settingRoutes } from "@/routes";
 import { useSelector } from "react-redux";
 import { RootState } from "@/redux/store";
 
@@ -46,20 +46,25 @@ export default function Settings() {
         size="xl"
         open={open}
         handler={handleOpen}
-        className="h-4/5 overflow-hidden"
+        className="h-[90%] dark:bg-dark-primary flex flex-col overflow-hidden"
       >
         <DialogHeader
           placeholder={undefined}
-          className="flex p-0 border-b border-e-border-light-primary justify-between"
+          className="p-0 border-b border-light-primary dark:border-dark-primary h-20"
         >
-          <div className="h-20 flex place-items-center px-3 gap-3 border-r rounded-ss-lg border-light-primary w-1/5 bg-light-primary">
-            <span className="rounded-lg border border-light-primary w-8 h-8 grid place-content-center">
+          <div className="w-1/5 flex gap-3 border-r border-light-primary dark:border-dark-primary h-full items-center pl-5 bg-light-primary dark:bg-dark-primary">
+            <span className="rounded-lg border border-light-primary w-8 h-8 grid place-content-center dark:border-dark-primary">
               <IoSettingsOutline
                 size={19}
                 color={darkMode ? "#eaeaea" : "black"}
               />
             </span>
-            <Typography placeholder={undefined} variant="h5" color="black">
+
+            <Typography
+              placeholder={undefined}
+              variant="h5"
+              className="text-light-primary dark:text-white"
+            >
               Setting
             </Typography>
           </div>
@@ -67,53 +72,58 @@ export default function Settings() {
           <IconButton
             placeholder={undefined}
             color="white"
-            className="rounded-lg shadow-none bg-light-primary w-9 h-9 self-start"
+            className="rounded-lg shadow-none w-9 h-9 self-start bg-light-gray dark:bg-charcoal-gray rounded-ee-none ml-auto"
             onClick={handleOpen}
           >
-            <GrClose size={19} color="black" />
+            <GrClose size={19} color={darkMode ? "#eaeaea" : "black"} />
           </IconButton>
         </DialogHeader>
-        <DialogBody placeholder={undefined} className="p-0 flex h-full">
-          <aside className="w-1/5 border-r border-light-primary h-full bg-light-primary rounded-s-lg">
-            <nav className="flex flex-col ml-6 gap-5 mt-7">
+
+        <DialogBody
+          placeholder={undefined}
+          className="p-0 flex flex-1 overflow-hidden rounded-b-xl"
+        >
+          <aside className="w-1/5 border-r border-light-primary bg-light-primary dark:bg-dark-primary dark:border-dark-primary h-full">
+            <nav className="flex flex-col ml-6 gap-7 pt-7">
               {settingRoutes.map(({ title, routes }) => (
-                <div key={title}>
+                <div key={title} className="flex flex-col gap-3">
                   <Typography
                     placeholder={undefined}
-                    variant="small"
-                    color="gray"
-                    className="font-thin text-sm"
+                    className="font-thin text-[10px] !text-gray-500 uppercase"
                   >
                     {title}
                   </Typography>
+                  <div className="flex flex-col gap-5">
+                    {routes.map(({ routeTitle, routePath, routeIcon }) => {
+                      const IconComponent = routeIcon;
 
-                  {routes.map(({ routeTitle, routePath, routeIcon }) => {
-                    const IconComponent = routeIcon;
-
-                    return (
-                      <div key={routeTitle} className="pl-3 flex flex-col my-5">
+                      return (
                         <Link
+                          key={routeTitle}
                           href={routePath}
                           className="flex place-items-center gap-3"
                         >
-                          <IconComponent size={20} color="#504965" />
+                          <IconComponent
+                            size={21}
+                            color={darkMode ? "#d2d2d2" : "#4d4764"}
+                          />
                           <Typography
                             placeholder={undefined}
                             variant="small"
-                            className="text-[#504965]"
+                            className="text-light-secondary dark:text-dark-secondary"
                           >
                             {routeTitle}
                           </Typography>
                         </Link>
-                      </div>
-                    );
-                  })}
+                      );
+                    })}
+                  </div>
                 </div>
               ))}
             </nav>
           </aside>
 
-          <main className="flex-1 p-5 gap-10 flex flex-col overflow-y-auto">
+          <main className="flex-1 flex flex-col p-5 overflow-y-auto h-full rounded-ee-xl gap-10">
             <EditProfile />
             <Themes />
             <Personal />
