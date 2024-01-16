@@ -6,10 +6,12 @@ import { Typography } from "@material-tailwind/react";
 import { RootState } from "@/redux/store";
 import { useDispatch, useSelector } from "react-redux";
 import { toggleDarkMode } from "@/redux/slices";
+import { usePathname } from "next/navigation";
 
 export default function Topbar() {
   const darkMode = useSelector((state: RootState) => state.ui.darkMode);
   const dispatch = useDispatch();
+  const pathname = usePathname();
 
   useEffect(() => {
     const html = document.querySelector("html") as HTMLHtmlElement;
@@ -31,9 +33,9 @@ export default function Topbar() {
         <Typography
           placeholder={undefined}
           variant="h5"
-          className="text-light-primary dark:text-white"
+          className="text-light-primary dark:text-white capitalize"
         >
-          Getting Started
+          {pathname.slice(1)}
         </Typography>
         <Typography
           placeholder={undefined}
